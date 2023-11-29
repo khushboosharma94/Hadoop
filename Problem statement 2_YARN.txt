@@ -1,0 +1,9 @@
+Q1. YARN
+# Run your MapReduce program
+cd hadoop-mapreduce
+yarn jar hadoop-mapreduce-examples-3.0.0-cdh6.2.1.jar
+ 
+# Capture the application ID
+applicationId=$(yarn application -list | awk 'NR>2 {print $1; exit}')
+ 
+echo "Application ID: $applicationId"
